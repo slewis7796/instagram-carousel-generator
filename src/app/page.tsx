@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useRef, ChangeEvent, useEffect } from 'react';
-import Head from 'next/head';
+// Remove the Head import as it's not compatible with Next.js App Router
+// import Head from 'next/head';
 
 // Define font options with display names and CSS class names
 const fontOptions = [
@@ -119,19 +120,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-900 text-white">
-      <Head>
-        {/* Explicitly load all fonts in the head */}
-        {fontOptions.map((font) => {
-          const fontName = font.name.replace(/\s+/g, '+');
-          return (
-            <link 
-              key={font.name}
-              rel="stylesheet" 
-              href={`https://fonts.googleapis.com/css2?family=${fontName}:wght@400;700&display=swap`}
-            />
-          );
-        })}
-      </Head>
+      {/* Remove the Head component as it's not compatible with Next.js App Router */}
       
       {/* Header */}
       <header className="header-gradient p-4 flex justify-between items-center">
@@ -408,4 +397,50 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4">Playful Fonts</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {fontOptions.slice(5, 10).map((font) => (
-                  <div key={font.name}<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
+                  <div key={font.name} className="p-4 border border-gray-200 rounded">
+                    <p className={font.class} style={{fontFamily: font.name}}>
+                      {font.name} - Sample Text
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Impactful Fonts */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Impactful Fonts</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {fontOptions.slice(10).map((font) => (
+                  <div key={font.name} className="p-4 border border-gray-200 rounded">
+                    <p className={font.class} style={{fontFamily: font.name}}>
+                      {font.name} - Sample Text
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* PayPal Donation */}
+      <div className="mt-12 text-center">
+        <p className="mb-4">If you found this tool helpful, consider buying me a coffee!</p>
+        <a 
+          href="https://www.paypal.com/donate" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="donation-button inline-block"
+        >
+          Buy Me a Coffee ☕
+        </a>
+      </div>
+      
+      {/* Footer */}
+      <footer className="mt-16 py-8 bg-gray-800 text-center text-white">
+        <p>© 2023 Instagram Carousel Generator. All rights reserved.</p>
+        <p className="mt-2 text-sm">Created with Next.js and Tailwind CSS</p>
+      </footer>
+    </main>
+  );
+}
