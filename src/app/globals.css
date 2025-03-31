@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom gradient background for header */
+.header-gradient {
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+}
+
+/* Font imports - moved to top for proper loading */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* Font classes with !important to ensure they override any other styles */
+.font-roboto {
+  font-family: 'Roboto', sans-serif !important;
+}
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif !important;
+}
+.font-opensans {
+  font-family: 'Open Sans', sans-serif !important;
+}
+.font-lato {
+  font-family: 'Lato', sans-serif !important;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+.font-pacifico {
+  font-family: 'Pacifico', cursive !important;
+}
+.font-bangers {
+  font-family: 'Bangers', cursive !important;
+}
+.font-lobster {
+  font-family: 'Lobster', cursive !important;
+}
+.font-permanent-marker {
+  font-family: 'Permanent Marker', cursive !important;
+}
+.font-fredoka-one {
+  font-family: 'Fredoka One', 'Fredoka', cursive !important;
+}
+.font-bebas-neue {
+  font-family: 'Bebas Neue', sans-serif !important;
+}
+.font-anton {
+  font-family: 'Anton', sans-serif !important;
+}
+.font-oswald {
+  font-family: 'Oswald', sans-serif !important;
+}
+.font-abril-fatface {
+  font-family: 'Abril Fatface', cursive !important;
+}
+.font-righteous {
+  font-family: 'Righteous', cursive !important;
+}
